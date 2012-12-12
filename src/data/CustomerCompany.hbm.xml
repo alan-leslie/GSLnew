@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-Dec-2012 01:34:03 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="data.CustomerCompany" table="customer_company" catalog="gsl">
+        <id name="customerId" type="java.lang.Short">
+            <column name="customer_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="address" class="data.Address" fetch="select">
+            <column name="address_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="contact" class="data.Contact" fetch="select">
+            <column name="contact_id" not-null="true" />
+        </many-to-one>
+        <property name="companyName" type="string">
+            <column name="company_name" length="40" not-null="true" />
+        </property>
+        <property name="notes" type="string">
+            <column name="notes" />
+        </property>
+        <property name="versionNo" type="byte">
+            <column name="version_no" not-null="true" />
+        </property>
+        <property name="userId" type="string">
+            <column name="user_id" length="50" not-null="true" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19" not-null="true" />
+        </property>
+        <property name="active" type="boolean">
+            <column name="active" not-null="true" />
+        </property>
+        <property name="lastUpdate" type="timestamp">
+            <column name="last_update" length="19" not-null="true" />
+        </property>
+        <set name="jobItems" inverse="true">
+            <key>
+                <column name="customer_id" not-null="true" />
+            </key>
+            <one-to-many class="data.JobItem" />
+        </set>
+    </class>
+</hibernate-mapping>

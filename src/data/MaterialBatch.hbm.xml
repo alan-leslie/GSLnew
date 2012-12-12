@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-Dec-2012 01:34:03 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="data.MaterialBatch" table="material_batch" catalog="gsl">
+        <id name="materialBatchId" type="java.lang.Short">
+            <column name="material_batch_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="stockItem" class="data.StockItem" fetch="select">
+            <column name="stock_item_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="materialSheet" class="data.MaterialSheet" fetch="select">
+            <column name="material_sheet_id" not-null="true" />
+        </many-to-one>
+        <property name="quantity" type="string">
+            <column name="quantity" length="50" />
+        </property>
+        <property name="versionNo" type="byte">
+            <column name="version_no" not-null="true" />
+        </property>
+        <property name="userId" type="string">
+            <column name="user_id" length="50" not-null="true" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19" not-null="true" />
+        </property>
+        <property name="active" type="boolean">
+            <column name="active" not-null="true" />
+        </property>
+        <property name="lastUpdate" type="timestamp">
+            <column name="last_update" length="19" not-null="true" />
+        </property>
+        <set name="batchSheets" inverse="true">
+            <key>
+                <column name="material_batch_id" not-null="true" />
+            </key>
+            <one-to-many class="data.BatchSheet" />
+        </set>
+    </class>
+</hibernate-mapping>

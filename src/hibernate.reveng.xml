@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="gsl"/>
+  <table-filter match-name="country"/>
+  <table-filter match-name="city"/>
+  <table-filter match-name="batch_sheet"/>
+  <table-filter match-name="stock_item"/>
+  <table-filter match-name="contact"/>
+  <table-filter match-name="client"/>
+  <table-filter match-name="customer_company"/>
+  <table-filter match-name="material_batch"/>
+  <table-filter match-name="address"/>
+  <table-filter match-name="material"/>
+  <table-filter match-name="material_sheet"/>
+  <table-filter match-name="job_item"/>
+</hibernate-reverse-engineering>

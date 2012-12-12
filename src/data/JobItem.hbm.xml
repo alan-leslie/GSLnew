@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-Dec-2012 01:34:03 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="data.JobItem" table="job_item" catalog="gsl">
+        <id name="jobId" type="java.lang.Short">
+            <column name="job_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="stockItem" class="data.StockItem" fetch="select">
+            <column name="stock_item_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="client" class="data.Client" fetch="select">
+            <column name="client_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="customerCompany" class="data.CustomerCompany" fetch="select">
+            <column name="customer_id" not-null="true" />
+        </many-to-one>
+        <property name="jobName" type="string">
+            <column name="job_name" length="50" />
+        </property>
+        <property name="templateRef" type="string">
+            <column name="template_ref" length="50" />
+        </property>
+        <property name="templateDate" type="timestamp">
+            <column name="template_date" length="19" />
+        </property>
+        <property name="estimateRef" type="string">
+            <column name="estimate_ref" length="50" />
+        </property>
+        <property name="estimateDate" type="timestamp">
+            <column name="estimate_date" length="19" />
+        </property>
+        <property name="invoiceRef" type="string">
+            <column name="invoice_ref" length="50" />
+        </property>
+        <property name="invoiceDate" type="timestamp">
+            <column name="invoice_date" length="19" />
+        </property>
+        <property name="notes" type="string">
+            <column name="notes" />
+        </property>
+        <property name="versionNo" type="byte">
+            <column name="version_no" not-null="true" />
+        </property>
+        <property name="userId" type="string">
+            <column name="user_id" length="50" not-null="true" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19" not-null="true" />
+        </property>
+        <property name="active" type="boolean">
+            <column name="active" not-null="true" />
+        </property>
+        <property name="lastUpdate" type="timestamp">
+            <column name="last_update" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

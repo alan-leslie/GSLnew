@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-Dec-2012 01:34:03 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="data.Material" table="material" catalog="gsl">
+        <id name="materialId" type="java.lang.Short">
+            <column name="material_id" />
+            <generator class="identity" />
+        </id>
+        <property name="materialType" type="string">
+            <column name="material_type" length="50" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="50" />
+        </property>
+        <property name="notes" type="string">
+            <column name="notes" />
+        </property>
+        <property name="versionNo" type="byte">
+            <column name="version_no" not-null="true" />
+        </property>
+        <property name="userId" type="string">
+            <column name="user_id" length="50" not-null="true" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19" not-null="true" />
+        </property>
+        <property name="active" type="boolean">
+            <column name="active" not-null="true" />
+        </property>
+        <property name="lastUpdate" type="timestamp">
+            <column name="last_update" length="19" not-null="true" />
+        </property>
+        <set name="materialSheets" inverse="true">
+            <key>
+                <column name="material_id" not-null="true" />
+            </key>
+            <one-to-many class="data.MaterialSheet" />
+        </set>
+    </class>
+</hibernate-mapping>

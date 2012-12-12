@@ -1,0 +1,75 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
+
+USE gsl;
+SET AUTOCOMMIT=0;
+INSERT INTO address VALUES 
+(1,'House name','Street name',1,'EH1 1AA', 1,'alan','2006-02-15 04:45:30',true,'2006-02-15 04:45:30');
+COMMIT;
+
+SET AUTOCOMMIT=0;
+INSERT INTO city VALUES 
+(1,'Edinburgh',1, 1,'alan','2006-02-15 04:45:30',true,'2006-02-15 04:45:25'),
+(2,'Kirkcaldy',1, 1,'alan','2006-02-15 04:45:30',true,'2006-02-15 04:45:25');
+COMMIT;
+
+SET AUTOCOMMIT=0;
+INSERT INTO country VALUES 
+(1,'Scotland', 1,'alan','2006-02-15 04:45:30',true,'2006-02-15 04:44:00'),
+(2,'England', 1,'alan','2006-02-15 04:45:30',true,'2006-02-15 04:44:00');
+COMMIT;
+
+SET AUTOCOMMIT=0;
+INSERT INTO contact VALUES 
+(1,'Joe','Bloggs','joe@email','01 333 5175',1,'alan','2006-02-15 04:45:30',true,'2006-02-15 04:44:00');
+COMMIT;
+
+SET AUTOCOMMIT=0;
+INSERT INTO customer_company VALUES 
+(1,'Kitchens International (E)',1,1 ,1,'alan','2006-02-15 04:45:30',true,'2006-02-15 04:44:00'),
+(2,'Private',1,1 ,1,'alan','2006-02-15 04:45:30',true,'2006-02-15 04:44:00');
+COMMIT;
+
+SET AUTOCOMMIT=0;
+INSERT INTO material VALUES 
+(1,'Silestone','Black', 1,'alan','2006-02-15 04:45:30',true,'2006-02-15 04:45:30'),
+(2,'Silestone','White', 1,'alan','2006-02-15 04:45:30',true,'2006-02-15 04:45:30');
+COMMIT;
+
+SET AUTOCOMMIT=0;
+INSERT INTO material_sheet VALUES 
+(1,1,'12K','12mm', 1,'alan','2006-02-15 04:45:30',true,'2006-02-15 04:45:25'),
+(2,1,'20K','20mm', 1,'alan','2006-02-15 04:45:30',true,'2006-02-15 04:45:25'),
+(3,1,'30K','30mm', 1,'alan','2006-02-15 04:45:30',true,'2006-02-15 04:45:25');
+COMMIT;
+
+SET AUTOCOMMIT=0;
+INSERT INTO material_batch VALUES 
+(1,1,1,4, 1,'alan','2006-02-15 04:45:30',true,'2006-02-15 04:44:00');
+COMMIT;
+
+SET AUTOCOMMIT=0;
+INSERT INTO batch_sheet VALUES 
+(1,1,'12345678', 1,'alan','2006-02-15 04:45:30',true,'2006-02-15 04:44:00');
+COMMIT;
+
+SET AUTOCOMMIT=0;
+INSERT INTO stock_item VALUES 
+(1,1,'2006-02-15 04:45:30','order no','2006-02-16 04:45:30','2006-02-17 04:45:30', 1,'alan','2006-02-15 04:45:30',true,'2006-02-15 04:44:00');
+COMMIT;
+
+SET AUTOCOMMIT=0;
+INSERT INTO client VALUES 
+(1,'smith',1, 1,'alan','2006-02-15 04:45:30',true,'2006-02-15 04:44:00');
+COMMIT;
+
+SET AUTOCOMMIT=0;
+INSERT INTO job_item VALUES 
+(1,'711/12',1,1,1,'template file','2006-02-15 04:45:30','estomate file', '2006-02-16 04:45:30','invoice file', '2006-02-17 04:45:30', 1,'alan','2006-02-15 04:45:30',true,'2006-02-15 04:44:00');
+COMMIT;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

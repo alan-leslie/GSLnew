@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/gsl?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">Km5JB81A</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <mapping resource="data/BatchSheet.hbm.xml"/>
+    <mapping resource="data/MaterialSheet.hbm.xml"/>
+    <mapping resource="data/CustomerCompany.hbm.xml"/>
+    <mapping resource="data/Address.hbm.xml"/>
+    <mapping resource="data/City.hbm.xml"/>
+    <mapping resource="data/StockItem.hbm.xml"/>
+    <mapping resource="data/Material.hbm.xml"/>
+    <mapping resource="data/Contact.hbm.xml"/>
+    <mapping resource="data/MaterialBatch.hbm.xml"/>
+    <mapping resource="data/Country.hbm.xml"/>
+    <mapping resource="data/JobItem.hbm.xml"/>
+    <mapping resource="data/Client.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

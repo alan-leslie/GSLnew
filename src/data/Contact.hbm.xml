@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-Dec-2012 01:34:03 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="data.Contact" table="contact" catalog="gsl">
+        <id name="contactId" type="java.lang.Short">
+            <column name="contact_id" />
+            <generator class="identity" />
+        </id>
+        <property name="contactFirstName" type="string">
+            <column name="contact_first_name" length="45" not-null="true" />
+        </property>
+        <property name="contactLastName" type="string">
+            <column name="contact_last_name" length="45" not-null="true" />
+        </property>
+        <property name="contactEmail" type="string">
+            <column name="contact_email" length="50" />
+        </property>
+        <property name="contactPhoneNumber" type="string">
+            <column name="contact_phone_number" length="20" />
+        </property>
+        <property name="versionNo" type="byte">
+            <column name="version_no" not-null="true" />
+        </property>
+        <property name="userId" type="string">
+            <column name="user_id" length="50" not-null="true" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19" not-null="true" />
+        </property>
+        <property name="active" type="boolean">
+            <column name="active" not-null="true" />
+        </property>
+        <property name="lastUpdate" type="timestamp">
+            <column name="last_update" length="19" not-null="true" />
+        </property>
+        <set name="customerCompanies" inverse="true">
+            <key>
+                <column name="contact_id" not-null="true" />
+            </key>
+            <one-to-many class="data.CustomerCompany" />
+        </set>
+    </class>
+</hibernate-mapping>
